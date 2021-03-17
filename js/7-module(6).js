@@ -3,16 +3,16 @@ input.addEventListener('blur', isValid)
 input.addEventListener('input', isTyping)
 
 function isValid() {
-    if (input.value.length <= this.dataset.length && input.value.length > 0 && input.value !== ' ') {
-        input.classList.add('valid')
-        input.classList.remove('invalid')
+    if (this.value.length === +this.dataset.length) {
+        this.classList.add('valid')
+        this.classList.remove('invalid')
     } else {
-        input.classList.remove('valid')
-        input.classList.add('invalid')
+        this.classList.remove('valid')
+        this.classList.add('invalid')
     }
     console.log(input.length);
 }
 function isTyping() {
-    input.classList.remove('invalid')
-    input.classList.remove('valid')
+    this.classList.remove('invalid')
+    this.classList.remove('valid')
 }
